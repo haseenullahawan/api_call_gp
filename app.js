@@ -40,7 +40,7 @@ con.connect(function(err) {
 });
 
 
-	return res.send("get working");
+	//return res.send("get working");
 });
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
