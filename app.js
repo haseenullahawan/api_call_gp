@@ -34,6 +34,7 @@ con.connect(function(err) {
   if (err) throw err;
   con.query("SELECT * FROM users", function (err, result, fields) {
     if (err) throw err;
+    return res.send(result);
     console.log(result);
   });
 });
