@@ -20,8 +20,8 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
-app.use('/users', usersRouter);
-app.get('/data',(req,res)=>{
+//app.use('/users', usersRouter);
+app.get('/all-users',(req,res)=>{
 
 var con = mysql.createConnection({
   host: "68.66.248.55",
