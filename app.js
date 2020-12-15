@@ -61,6 +61,26 @@ con.connect(function(err) {
 });
 });
 
+//API # 3
+
+app.get('/haseen3',(req,res)=>{
+var con = mysql.createConnection({
+  host: "68.66.248.55",
+  user: "callgpno_igni599",
+  password: "786imran",
+  database: "callgpno_igni599"
+});
+
+con.connect(function(err) {
+  if (err) throw err;
+  con.query("SELECT * FROM users", function (err, result, fields) {
+    if (err) throw err;
+    return res.send("my name is haseen12345");
+    console.log(result);
+  });
+});
+});
+
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
