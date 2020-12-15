@@ -21,8 +21,9 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
 //app.use('/users', usersRouter);
-app.get('/all-users',(req,res)=>{
 
+//API # 1
+app.get('/all-users',(req,res)=>{
 var con = mysql.createConnection({
   host: "68.66.248.55",
   user: "callgpno_igni599",
@@ -38,9 +39,25 @@ con.connect(function(err) {
     console.log(result);
   });
 });
+});
 
+//API # 2
+app.get('/all-pharmacey-parent-category',(req,res)=>{
+var con = mysql.createConnection({
+  host: "68.66.248.55",
+  user: "callgpno_igni599",
+  password: "786imran",
+  database: "callgpno_pharmacy"
+});
 
-	//return res.send("get working");
+con.connect(function(err) {
+  if (err) throw err;
+  con.query("SELECT * FROM mp_category", function (err, result, fields) {
+    if (err) throw err;
+    return res.send(result);
+    console.log(result);
+  });
+});
 });
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
