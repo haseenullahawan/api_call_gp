@@ -42,23 +42,7 @@ con.connect(function(err) {
 });
 
 //API # 2
-app.get('/all-pharmacey-parent-category',(req,res)=>{
-var con = mysql.createConnection({
-  host: "68.66.248.55",
-  user: "callgpno_igni599",
-  password: "786imran",
-  database: "callgpno_pharmacy"
-});
 
-con.connect(function(err) {
-  if (err) throw err;
-  con.query("SELECT * FROM mp_category", function (err, result, fields) {
-    if (err) throw err;
-    return res.send(result);
-    console.log(result);
-  });
-});
-});
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   next(createError(404));
